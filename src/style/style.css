@@ -1,0 +1,62 @@
+/* Comman Use */
+.btn {
+    border-color: red !important;
+}
+
+.text-danger {
+    color: red !important;
+}
+.col-md-11{
+    height: 511px;
+}
+.shadow {
+    box-shadow: 0 0 10px 0 rgba(215, 7, 7, 0.7) !important;
+    border-radius: 20px;
+}
+
+/* Dashboad Side Navbar */
+
+/* Header */
+@media (min-width: 768px) {
+    .container-fluid {
+        margin-left: 100px;
+        margin-right: 80px;
+    }
+}
+
+.navbar-brand,
+.nav-link {
+    color: white !important;
+    font-size: 20px;
+    margin: 12px;
+}
+
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.active {
+    color: red !important;
+    text-decoration: underline;
+}
+
+
+/* Home Page */
+.home {
+    height: 550px;
+}
+
+/* Conatact */
+::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: red !important;
+}
+
+input,
+textarea {
+    color: white !important;
+}
