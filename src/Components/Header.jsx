@@ -17,6 +17,14 @@ const Header = () => {
     setIsLoggedIn(!!token);
   }, [isLoggedIn]);
 
+  const handleNavLinkClick = () => {
+    const navbarCollapse = document.getElementById('navbarSupportedContent');
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    if (navbarCollapse.classList.contains('show')) {
+      navbarToggler.click();
+    }
+  };
+
   return (
     <nav className="navbar navbar-expand-lg">
       <div className="container-fluid">
@@ -43,6 +51,7 @@ const Header = () => {
                 }
                 aria-current="page"
                 to="/"
+                onClick={handleNavLinkClick}
               >
                 Home
               </NavLink>
@@ -54,6 +63,7 @@ const Header = () => {
                 }
                 aria-current="page"
                 to="/about"
+                onClick={handleNavLinkClick}
               >
                 About
               </NavLink>
@@ -65,6 +75,7 @@ const Header = () => {
                 }
                 aria-current="page"
                 to="/contact"
+                onClick={handleNavLinkClick}
               >
                 Contact
               </NavLink>
@@ -73,7 +84,10 @@ const Header = () => {
               {isLoggedIn ? (
                 <button
                   className="nav-link btn btn-link"
-                  onClick={handleLogout}
+                  onClick={() => {
+                    handleLogout();
+                    handleNavLinkClick();
+                  }}
                 >
                   Logout
                 </button>
@@ -82,6 +96,7 @@ const Header = () => {
                   className="nav-link"
                   activeclassname="active"
                   to="/login"
+                  onClick={handleNavLinkClick}
                 >
                   LogIn
                 </NavLink>

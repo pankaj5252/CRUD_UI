@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Fade } from "react-awesome-reveal";
-import { Link, Navigate } from "react-router-dom";
+import { Link ,useNavigate} from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"; // Ensure you import the toastify CSS
 
 const Register = () => {
-  const [isRegistered, setIsRegistered] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -43,6 +44,7 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
     const formErrors = validate();
     if (Object.keys(formErrors).length === 0) {
       try {
@@ -60,7 +62,9 @@ const Register = () => {
           toast.success("Registration successful!", {
             position: "top-right",
           });
-          setIsRegistered(true);
+          setTimeout(() => {
+            navigate('/login')
+          }, 1000);
         } else {
           toast.error("Registration failed. Please try again.", {
             position: "top-right",
@@ -76,18 +80,16 @@ const Register = () => {
             position: "top-right",
           });
         }
+      } finally {
+        setLoading(false);
       }
     } else {
       setErrors(formErrors);
     }
   };
 
-  if (isRegistered) {
-    return <Navigate to="/login" />;
-  }
-
   return (
-    <div className="container mb-5 mt-4">
+    <div className="container p-4 mb-5 mt-4">
       <div className="row justify-content-center">
         <div className="col-md-3"></div>
         <div className="col-md-6 shadow p-3">
@@ -156,7 +158,7 @@ const Register = () => {
               </div>
               <div className="text-center">
                 <button type="submit" className="btn text-white btn-block mb-4">
-                  Sign Up
+                  {loading ? "Loading..." : "Sign in"}
                 </button>
               </div>
               <div className="text-center">

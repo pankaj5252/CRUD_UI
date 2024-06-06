@@ -10,6 +10,7 @@ const Login = () => {
     username: "",
     password: "",
   });
+  const [loading, setLoading] = useState(false); // State to track loading
   const navigate = useNavigate();
   const [error, setError] = useState(null);
 
@@ -23,11 +24,20 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
     try {
-      const response = await axios.post("https://crud-backend-lmk8.onrender.com/login", formData);
+      const response = await axios.post(
+        "https://crud-backend-lmk8.onrender.com/login",
+        formData
+      );
       if (response.data.token) {
         localStorage.setItem("token", response.data.token);
-        navigate("/user/dashboard");
+        toast.success("Login successful!", {
+          position: "top-right",
+        });
+        setTimeout(() => {
+          navigate("/user/dashboard");
+        }, 1000);
       }
     } catch (error) {
       console.error("Error during login:", error);
@@ -35,15 +45,17 @@ const Login = () => {
       toast.error("Invalid credentials, please try again.", {
         position: "top-right",
       });
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
     <div>
-      <div className="container mb-5 mt-4">
+      <div className="container p-4 mb-5 mt-4">
         <div className="row justify-content-center">
           <div className="col-md-4"></div>
-          <div className="col-md-4 shadow p-3">
+          <div className="col-md-4 shadow">
             <h1 className="text-center mb-4 mt-2">Login Now</h1>
             <Fade>
               <form onSubmit={handleSubmit}>
@@ -79,10 +91,10 @@ const Login = () => {
                     data-mdb-ripple-init
                     className="btn text-white btn-block mb-4"
                   >
-                    Sign in
+                    {loading ? "Loading..." : "Sign in"}
                   </button>
                 </div>
-                <div className="text-center">
+                <div className="text-center pb-3">
                   <p>
                     Not a member?{" "}
                     <Link to="/register" className="text-primary">

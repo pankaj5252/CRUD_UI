@@ -17,13 +17,13 @@ const Dashboard = () => {
           <div className="col-md-11 p-4">
             <div className="row">
               <div className="col-md-4 d-flex justify-content-center text-center">
-                <div className="shadow w-75 p-3">Total Employee : 50</div>
+                <div className="shadow w-100 p-3 mt-3">Total Employee : 50</div>
               </div>
               <div className="col-md-4 d-flex justify-content-center text-center">
-                <div className="shadow w-75 p-3">Total Employee : 50</div>
+                <div className="shadow w-100 p-3 mt-3">Total Employee : 50</div>
               </div>
               <div className="col-md-4 d-flex justify-content-center text-center">
-                <div className="shadow w-75 p-3">Total Employee : 50</div>
+                <div className="shadow w-100 p-3 mt-3">Total Employee : 50</div>
               </div>
             </div>
           </div>

@@ -24,6 +24,12 @@
     }
 }
 
+@media (max-width: 768px) {
+    .home {
+        height: 600px !important;
+    }
+}
+
 .navbar-brand,
 .nav-link {
     color: white !important;
