@@ -1,8 +1,12 @@
 import React, { useState } from "react";
+import axios from "axios";
 import { Fade } from "react-awesome-reveal";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"; // Ensure you import the toastify CSS
 
 const Register = () => {
+  const [isRegistered, setIsRegistered] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -41,31 +45,46 @@ const Register = () => {
     e.preventDefault();
     const formErrors = validate();
     if (Object.keys(formErrors).length === 0) {
-      console.log(formData);
-      // try {
-      //   const response = await fetch("YOUR_BACKEND_ENDPOINT", {
-      //     method: "POST",
-      //     headers: {
-      //       "Content-Type": "application/json",
-      //     },
-      //     body: JSON.stringify(formData),
-      //   });
+      try {
+        const response = await axios.post(
+          "https://crud-backend-lmk8.onrender.com/register",
+          formData,
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
 
-      //   if (response.ok) {
-      //     // Handle successful response
-      //     alert("Registration successful");
-      //   } else {
-      //     // Handle error response
-      //     alert("Registration failed");
-      //   }
-      // } catch (error) {
-      //   console.error("Error:", error);
-      //   alert("An error occurred");
-      // }
+        if (response.status === 200 || response.status === 201) {
+          toast.success("Registration successful!", {
+            position: "top-right",
+          });
+          setIsRegistered(true);
+        } else {
+          toast.error("Registration failed. Please try again.", {
+            position: "top-right",
+          });
+        }
+      } catch (error) {
+        if (error.response) {
+          toast.error(`Error: ${error.response.data.message}`, {
+            position: "top-right",
+          });
+        } else {
+          toast.error("An unexpected error occurred. Please try again.", {
+            position: "top-right",
+          });
+        }
+      }
     } else {
       setErrors(formErrors);
     }
   };
+
+  if (isRegistered) {
+    return <Navigate to="/login" />;
+  }
 
   return (
     <div className="container mb-5 mt-4">
@@ -178,6 +197,7 @@ const Register = () => {
         </div>
         <div className="col-md-3"></div>
       </div>
+      <ToastContainer />
     </div>
   );
 };

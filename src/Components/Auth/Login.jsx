@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Fade } from "react-awesome-reveal";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -25,12 +27,14 @@ const Login = () => {
       const response = await axios.post("https://crud-backend-lmk8.onrender.com/login", formData);
       if (response.data.token) {
         localStorage.setItem("token", response.data.token);
-        console.log("Login successful", response.data);
-        navigate("/user/dashboard"); // Redirect to a protected route
+        navigate("/user/dashboard");
       }
     } catch (error) {
       console.error("Error during login:", error);
       setError("Invalid credentials, please try again.");
+      toast.error("Invalid credentials, please try again.", {
+        position: "top-right",
+      });
     }
   };
 
@@ -125,6 +129,7 @@ const Login = () => {
           <div className="col-md-4"></div>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };
