@@ -12,6 +12,7 @@ import Dashboard from './Components/User/Dashboard';
 import AddEmployee from './Components/User/AddEmployee';
 import ShowEmployee from './Components/User/ShowEmployee';
 import ProtectedRoute from './Components/ProtectedRoute';
+import Profile from './Components/User/Profile';
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
             <Route path='/user/dashboard' element={<Dashboard />} />
             <Route path='/user/AddEmployee' element={<AddEmployee />} />
             <Route path='/user/ShowEmployee' element={<ShowEmployee />} />
+            <Route path='/user/profile' element={<Profile />} />
           </Route>
         </Routes>
         <Footer />

@@ -9,7 +9,7 @@ const DashNav = () => {
           <NavLink
             to="/user/dashboard"
             className={({ isActive }) =>
-              isActive ? "nav-link active  mt-5 pt-5" : " mt-5 pt-5 nav-link"
+              isActive ? "nav-link active  pt-5" : " pt-5 nav-link"
             }
             aria-label="Dashboard"
           >
@@ -20,7 +20,7 @@ const DashNav = () => {
           <NavLink
             to="/user/showemployee"
             className={({ isActive }) =>
-              isActive ? "nav-link active  mt-5 pt-5" : " mt-5 pt-5 nav-link"
+              isActive ? "nav-link active  pt-5" : " pt-5 nav-link"
             }
             aria-label="Show Employee"
           >
@@ -31,11 +31,22 @@ const DashNav = () => {
           <NavLink
             to="/user/addemployee"
             className={({ isActive }) =>
-              isActive ? "nav-link active  mt-5 pt-5" : " mt-5 pt-5 nav-link"
+              isActive ? "nav-link active  pt-5" : " pt-5 nav-link"
             }
             aria-label="Add Employee"
           >
             <i className="fa-solid fa-plus"></i>
+          </NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink
+            to="/user/profile"
+            className={({ isActive }) =>
+              isActive ? "nav-link active  pt-5" : " pt-5 nav-link"
+            }
+            aria-label="User Profile"
+          >
+            <i className="fa-solid fa-user"></i>
           </NavLink>
         </li>
       </ul>
@@ -44,20 +55,9 @@ const DashNav = () => {
       <ul className="nav flex-inline justify-content-between text-center fixed-bottom w-100 d-md-none">
         <li className="nav-item">
           <NavLink
-            to="/user/dashboard"
-            className={({ isActive }) =>
-              isActive ? "nav-link active  mt-5 pt-5" : " mt-5 pt-5 nav-link"
-            }
-            aria-label="Dashboard"
-          >
-            <i className="fa-solid fa-house"></i>
-          </NavLink>
-        </li>
-        <li className="nav-item">
-          <NavLink
             to="/user/showemployee"
             className={({ isActive }) =>
-              isActive ? "nav-link active  mt-5 pt-5" : " mt-5 pt-5 nav-link"
+              isActive ? "nav-link active  pt-5" : " pt-5 nav-link"
             }
             aria-label="Show Employee"
           >
@@ -68,11 +68,33 @@ const DashNav = () => {
           <NavLink
             to="/user/addemployee"
             className={({ isActive }) =>
-              isActive ? "nav-link active  mt-5 pt-5" : " mt-5 pt-5 nav-link"
+              isActive ? "nav-link active  pt-5" : " pt-5 nav-link"
             }
             aria-label="Add Employee"
           >
             <i className="fa-solid fa-plus"></i>
+          </NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink
+            to="/user/dashboard"
+            className={({ isActive }) =>
+              isActive ? "nav-link active  pt-5" : " pt-5 nav-link"
+            }
+            aria-label="Dashboard"
+          >
+            <i className="fa-solid fa-house"></i>
+          </NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink
+            to="/user/profile"
+            className={({ isActive }) =>
+              isActive ? "nav-link active  pt-5" : " pt-5 nav-link"
+            }
+            aria-label="User Profile"
+          >
+            <i className="fa-solid fa-user"></i>
           </NavLink>
         </li>
       </ul>

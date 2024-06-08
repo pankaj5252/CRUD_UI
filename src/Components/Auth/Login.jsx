@@ -10,7 +10,8 @@ const Login = () => {
     username: "",
     password: "",
   });
-  const [loading, setLoading] = useState(false); // State to track loading
+
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const [error, setError] = useState(null);
 
@@ -29,9 +30,12 @@ const Login = () => {
       const response = await axios.post(
         "https://crud-backend-lmk8.onrender.com/login",
         formData
+        // {timeout:1000}
       );
       if (response.data.token) {
+        const userData = JSON.stringify(response.data.user);
         localStorage.setItem("token", response.data.token);
+        localStorage.setItem('user', userData);
         toast.success("Login successful!", {
           position: "top-right",
         });

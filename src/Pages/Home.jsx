@@ -15,6 +15,9 @@ const Home = () => {
     navigate('/user/dashboard');
   };
 
+  const userDetail = localStorage.getItem('user');
+  const userData = JSON.parse(userDetail);
+
   return (
     <div>
       <div className="container">
@@ -22,6 +25,7 @@ const Home = () => {
           <div className="col-md-12 home d-flex align-items-center justify-content-center">
             <Bounce>
               <div className="text-center">
+                {userData ? <h2>Hello <span className="text-danger fw-bold">{userData.name}</span></h2> : <h2>Hello <span className="text-danger fw-bold">Budy</span></h2>}
                 <h1>Welcome TO The React CRUD Application</h1>
                 {isLoggedIn ? (
                   <button className="btn fs-1 text-white mt-3" onClick={handleNavigate}>
