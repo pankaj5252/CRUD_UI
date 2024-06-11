@@ -15,7 +15,7 @@ const Profile = () => {
             <DashNav />
           </div>
           <div className="col-md-11  p-4">
-            <h1>hello {userData.name}</h1>
+            <h1>Hello , {userData.name}</h1>
           </div>
         </div>
       </div>

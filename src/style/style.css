@@ -61,7 +61,7 @@
 /* Conatact */
 ::-webkit-input-placeholder {
     /* Chrome/Opera/Safari */
-    color: red !important;
+    color: white !important;
 }
 
 input,
@@ -75,4 +75,10 @@ th,
 td {
     background: transparent !important;
     color: white !important;
+}
+
+/* Add employee */
+.inp{
+    height: 50px;
+    border-radius: 15px;
 }

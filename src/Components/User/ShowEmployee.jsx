@@ -28,6 +28,21 @@ const ShowEmployee = () => {
         fetchEmployees();
     }, []);
 
+    const deleteEmployee = async (id) => {
+        try {
+            const token = localStorage.getItem('token'); // or wherever you store the token
+            await axios.delete(`http://localhost:4000/employees/${id}`, {
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            });
+            setEmployees(employees.filter(employee => employee._id !== id));
+        } catch (error) {
+            console.error('Error deleting employee:', error);
+        }
+    };
+
+
     return (
         <div className="container-fluid p-0 m-0">
             <div className="row p-0 m-0">
@@ -77,8 +92,8 @@ const ShowEmployee = () => {
                                                         <td>{employee.salary}</td>
                                                         <td>{employee.joining_date}</td>
                                                         <td>{employee.retired_date}</td>
-                                                        <td>{employee.status}</td>
-                                                        <td><button className='btn text-white'>Edit</button> / <button className='btn text-white'>Del</button></td>
+                                                        <td><div className="btn btn-sm text-white">{employee.status}</div></td>
+                                                        <td><button className='btn text-white'><i class="fa-regular fa-pen-to-square text-success"></i></button> / <button className='btn text-white' onClick={() => deleteEmployee(employee._id)}><i class="fa-solid fa-trash text-danger"></i></button></td>
                                                     </tr>
                                                 ))}
                                             </tbody>

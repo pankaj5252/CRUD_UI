@@ -13,7 +13,7 @@ const AddEmployee = () => {
         salary: '',
         joining_date: '',
         retired_date: '',
-        status: ''
+        status: 'Registered'
     });
 
     const handleChange = e => {
@@ -71,48 +71,46 @@ const AddEmployee = () => {
                                     <div className="col-md-12 shadow p-2">
                                         <form onSubmit={handleSubmit}>
                                             <div className="row">
-                                                <div className="col-md-6">
-                                                    <input type="text" name="fname" className='form-control mt-2 bg-transparent' value={formData.fname} onChange={handleChange} placeholder="First Name" required />
+                                                <div className="col-md-4">
+                                                    <input type="text" name="fname" className='form-control inp mt-3 bg-transparent' value={formData.fname} onChange={handleChange} placeholder="First Name" required />
                                                 </div>
-                                                <div className="col-md-6">
-                                                    <input type="text" name="lname" className='form-control mt-2 bg-transparent' value={formData.lname} onChange={handleChange} placeholder="Last Name" required />
+                                                <div className="col-md-4">
+                                                    <input type="text" name="lname" className='form-control inp mt-3 bg-transparent' value={formData.lname} onChange={handleChange} placeholder="Last Name" required />
                                                 </div>
-                                            </div>
-                                            <div className="row">
-                                                <div className="col-md-6">
-                                                    <input type="text" name="mobile" className='form-control mt-2 bg-transparent' value={formData.mobile} onChange={handleChange} placeholder="Mobile" required />
-                                                </div>
-                                                <div className="col-md-6">
-                                                    <input type="email" name="email" className='form-control mt-2 bg-transparent' value={formData.email} onChange={handleChange} placeholder="Email" required />
+                                                <div className="col-md-4">
+                                                    <input type="text" name="mobile" className='form-control inp mt-3 bg-transparent' value={formData.mobile} onChange={handleChange} placeholder="Mobile" required />
                                                 </div>
                                             </div>
                                             <div className="row">
-                                                <div className="col-md-6">
-                                                    <input type="text" name="address" className='form-control mt-2 bg-transparent' value={formData.address} onChange={handleChange} placeholder="Address" required />
+                                                <div className="col-md-4">
+                                                    <input type="email" name="email" className='form-control inp mt-3 bg-transparent' value={formData.email} onChange={handleChange} placeholder="Email" required />
                                                 </div>
-                                                <div className="col-md-6">
-                                                    <input type="number" name="age" className='form-control mt-2 bg-transparent' value={formData.age} onChange={handleChange} placeholder="Age" required />
+                                                <div className="col-md-4">
+                                                    <input type="text" name="address" className='form-control inp mt-3 bg-transparent' value={formData.address} onChange={handleChange} placeholder="Address" required />
                                                 </div>
-                                            </div>
-                                            <div className="row">
-                                                <div className="col-md-6">
-                                                    <input type="number" name="salary" className='form-control mt-2 bg-transparent' value={formData.salary} onChange={handleChange} placeholder="Salary" required />
-                                                </div>
-                                                <div className="col-md-6">
-                                                    <input type="date" name="joining_date" className='form-control mt-2 bg-transparent' value={formData.joining_date} onChange={handleChange} placeholder="Joining Date" required />
+                                                <div className="col-md-4">
+                                                    <input type="number" name="age" className='form-control inp mt-3 bg-transparent' value={formData.age} onChange={handleChange} placeholder="Age" required />
                                                 </div>
                                             </div>
                                             <div className="row">
-                                                <div className="col-md-6">
-                                                    <input type="date" name="retired_date" className='form-control mt-2 bg-transparent' value={formData.retired_date} onChange={handleChange} placeholder="Retired Date" required />
+                                                <div className="col-md-4">
+                                                    <input type="number" name="salary" className='form-control inp mt-3 bg-transparent' value={formData.salary} onChange={handleChange} placeholder="Salary" required />
                                                 </div>
-                                                <div className="col-md-6">
-                                                    <input type="text" name="status" className='form-control mt-2 bg-transparent' value={formData.status} onChange={handleChange} placeholder="Status" required />
+                                                <div className="col-md-4">
+                                                    <input type="date" name="joining_date" className='form-control inp mt-3 bg-transparent' value={formData.joining_date} onChange={handleChange} placeholder="Joining Date" required />
+                                                </div>
+                                                <div className="col-md-4">
+                                                    <input type="date" name="retired_date" className='form-control inp mt-3 bg-transparent' value={formData.retired_date} onChange={handleChange} placeholder="Retired Date" required />
                                                 </div>
                                             </div>
-                                            <div className="row mt-2 bg-transparent">
+                                            <div className="row">
+                                                <div className="col-md-12">
+                                                    <input type="text" name="status" className='form-control inp mt-3 bg-transparent w-25 float-end' value={formData.status} onChange={handleChange} placeholder="Status" required />
+                                                </div>
+                                            </div>
+                                            <div className="row mt-3 bg-transparent">
                                                 <div className="col-md-12 text-center">
-                                                    <button type="submit" className="btn text-white w-25">Submit</button>
+                                                    <button type="submit" className="btn text-white inp w-25">Submit</button>
                                                 </div>
                                             </div>
                                         </form>
