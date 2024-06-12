@@ -7,10 +7,6 @@
     color: red !important;
 }
 
-.col-md-11 {
-    height: 511px;
-}
-
 .shadow {
     box-shadow: 0 0 10px 0 rgba(215, 7, 7, 0.7) !important;
     border-radius: 20px;

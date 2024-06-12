@@ -34,7 +34,6 @@ const AddEmployee = () => {
         try {
             const response = await axios.post('https://crud-backend-lmk8.onrender.com/addEmployee', formData, config);
             console.log('Employee added:', response.data);
-            // Optionally, reset the form
             setFormData({
                 fname: '',
                 lname: '',
@@ -105,7 +104,7 @@ const AddEmployee = () => {
                                             </div>
                                             <div className="row">
                                                 <div className="col-md-12">
-                                                    <input type="text" name="status" className='form-control inp mt-3 bg-transparent w-25 float-end' value={formData.status} onChange={handleChange} placeholder="Status" required />
+                                                    <input type="text" name="status" className='form-control inp mt-3 bg-transparent w-25 float-end border-0' value={formData.status} onChange={handleChange} placeholder="Status" disabled />
                                                 </div>
                                             </div>
                                             <div className="row mt-3 bg-transparent">
@@ -121,7 +120,6 @@ const AddEmployee = () => {
                     </div>
                 </div>
             </div>
-
         </>
     );
 };

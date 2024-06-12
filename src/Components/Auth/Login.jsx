@@ -10,10 +10,11 @@ const Login = () => {
     username: "",
     password: "",
   });
-
   const [loading, setLoading] = useState(false);
-  const navigate = useNavigate();
   const [error, setError] = useState(null);
+  const [showPassword, setShowPassword] = useState(false);
+
+  const navigate = useNavigate();
 
   const changeHandler = (e) => {
     const { id, value } = e.target;
@@ -30,7 +31,6 @@ const Login = () => {
       const response = await axios.post(
         "https://crud-backend-lmk8.onrender.com/login",
         formData
-        // {timeout:1000}
       );
       if (response.data.token) {
         const userData = JSON.stringify(response.data.user);
@@ -79,14 +79,20 @@ const Login = () => {
                 <label className="form-label" htmlFor="password">
                   Password:
                 </label>
-                <div data-mdb-input-init className="form-outline mb-4">
+                <div data-mdb-input-init className="form-outline mb-4 position-relative">
                   <input
-                    type="password"
+                    type={showPassword ? "text" : "password"}
                     id="password"
                     value={formData.password}
                     onChange={changeHandler}
                     className="form-control bg-transparent"
                   />
+                  <span
+                    onClick={() => setShowPassword(!showPassword)}
+                    className="position-absolute top-50 end-0 translate-middle-y pe-3 cursor-pointer"
+                  >
+                    {showPassword ? "Hide" : "Show"}
+                  </span>
                 </div>
                 <div className="text-center">
                   <button

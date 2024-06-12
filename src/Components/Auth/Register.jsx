@@ -158,7 +158,7 @@ const Register = () => {
               </div>
               <div className="text-center">
                 <button type="submit" className="btn text-white btn-block mb-4">
-                  {loading ? "Loading..." : "Sign in"}
+                  {loading ? "Loading..." : "Sign Up"}
                 </button>
               </div>
               <div className="text-center">

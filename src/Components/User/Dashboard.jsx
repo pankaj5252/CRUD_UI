@@ -51,8 +51,12 @@ const Dashboard = () => {
               <div className="col-md-4 d-flex justify-content-center text-center">
                 <div className="shadow w-100 p-3 mt-3">Total Employee : {employeeCount}</div>
               </div>
+              <h2 className="text-center mt-5">
+                Project is inprogress
+              </h2>
             </div>
           </div>
+
         </div>
       </div>
     </>
