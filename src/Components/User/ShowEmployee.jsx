@@ -75,7 +75,7 @@ const ShowEmployee = () => {
                                                     <th>Age</th>
                                                     <th>Salary</th>
                                                     <th>Joining Date</th>
-                                                    <th>Retired Date</th>
+                                                    <th>Birth of Date</th>
                                                     <th>Status</th>
                                                     <th>Action</th>
                                                 </tr>
@@ -91,9 +91,9 @@ const ShowEmployee = () => {
                                                         <td>{employee.age}</td>
                                                         <td>{employee.salary}</td>
                                                         <td>{employee.joining_date}</td>
-                                                        <td>{employee.retired_date}</td>
+                                                        <td>{employee.date_of_birth}</td>
                                                         <td><div className="btn btn-sm text-white">{employee.status}</div></td>
-                                                        <td><button className='btn text-white'><i class="fa-regular fa-pen-to-square text-success"></i></button> / <button className='btn text-white' onClick={() => deleteEmployee(employee._id)}><i class="fa-solid fa-trash text-danger"></i></button></td>
+                                                        <td><button className='btn text-white'><i className="fa-regular fa-pen-to-square text-success"></i></button> / <button className='btn text-white' onClick={() => deleteEmployee(employee._id)}><i className="fa-solid fa-trash text-danger"></i></button></td>
                                                     </tr>
                                                 ))}
                                             </tbody>
