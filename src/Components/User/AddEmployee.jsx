@@ -107,7 +107,7 @@ const AddEmployee = () => {
                                                     <input type="date" name="joining_date" id="joining_date" className='form-control inp bg-transparent' value={formData.joining_date} onChange={handleChange} placeholder="Joining Date" required />
                                                 </div>
                                                 <div className="col-md-4 col-6">
-                                                    <label htmlFor="date_of_birth" className='form-label mt-1'>Retired Date</label>
+                                                    <label htmlFor="date_of_birth" className='form-label mt-1'>Birth of Date</label>
                                                     <input type="date" name="date_of_birth" id="date_of_birth" className='form-control inp bg-transparent' value={formData.date_of_birth} onChange={handleChange} placeholder="Retired Date" required />
                                                 </div>
                                             </div>

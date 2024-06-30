@@ -1,6 +1,6 @@
 /* Comman Use */
 .btn {
-    border-color: red !important;
+    border-color: rgb(161, 17, 17) !important;
 }
 
 .text-danger {
@@ -26,6 +26,9 @@
     .home {
         height: 600px !important;
     }
+    .sortby{
+        width: 50% !important;
+    }
 }
 
 .navbar-brand,
@@ -46,6 +49,10 @@
 .active {
     color: red !important;
     text-decoration: underline;
+}
+
+.rounded-user {
+    border-radius: 50%;
 }
 
 
@@ -74,7 +81,19 @@ td {
 }
 
 /* Add employee */
-.inp{
+.inp {
     height: 45px;
     border-radius: 10px;
+}
+
+.search {
+    height: 40px;
+    background: transparent !important;
+    border: 1px solid rgb(159, 11, 11);
+}
+.sortby{
+    color: white !important;
+    height: 40px;
+    background: transparent !important;
+    border: 1px solid rgb(159, 11, 11);
 }

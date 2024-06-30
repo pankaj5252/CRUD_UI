@@ -49,6 +49,20 @@ const ShowEmployee = () => {
                 <div className="col-md-12 fs-2 text-center fw-bold mb-2">
                     Employees
                 </div>
+                <div className="col-md-4 text-center p-3">
+                    {/* <input type="text" className='rounded w-100 search p-2' placeholder='Search Employee' /> */}
+                </div>
+                <div className="col-md-4 col-6 text-center p-3">
+                    <input type="text" className='rounded w-100 search p-2' placeholder='Search Employee' />
+                </div>
+                <div className="col-md-4 col-6 p-3 d-flex align-items-center justify-content-center">
+                    <p className="mb-0 mr-2">Sort By -</p>
+                    <select name="" id="" className="form-control sortby w-25 ms-2">
+                        <option value="name">Name</option>
+                        <option value="mobile">Mobile</option>
+                    </select>
+                </div>
+
             </div>
             <div className="row p-0 m-0">
                 <div className="col-md-1">

@@ -14,9 +14,12 @@ const Header = () => {
 
   useEffect(() => {
     const token = localStorage.getItem("token");
-    setIsLoggedIn(!!token);
-  }, [isLoggedIn]);
-
+    if (token) {
+      setIsLoggedIn(true);
+    } else {
+      setIsLoggedIn(false);
+    }
+  }, []);
   const handleNavLinkClick = () => {
     const navbarCollapse = document.getElementById('navbarSupportedContent');
     const navbarToggler = document.querySelector('.navbar-toggler');
@@ -89,7 +92,7 @@ const Header = () => {
                     handleNavLinkClick();
                   }}
                 >
-                  Logout
+                  <i className="fa-solid fa-right-from-bracket"></i>
                 </button>
               ) : (
                 <NavLink
@@ -98,7 +101,7 @@ const Header = () => {
                   to="/login"
                   onClick={handleNavLinkClick}
                 >
-                  LogIn
+                 <i className="fa-solid fa-user border p-2 rounded-user"></i>
                 </NavLink>
               )}
             </li>
