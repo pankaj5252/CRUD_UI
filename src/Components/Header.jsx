@@ -11,15 +11,18 @@ const Header = () => {
     setIsLoggedIn(false);
     navigate("/login");
   };
-
+  
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
       setIsLoggedIn(true);
     } else {
       setIsLoggedIn(false);
+
     }
-  }, []);
+  }, [isLoggedIn]);
+
+
   const handleNavLinkClick = () => {
     const navbarCollapse = document.getElementById('navbarSupportedContent');
     const navbarToggler = document.querySelector('.navbar-toggler');
@@ -101,7 +104,7 @@ const Header = () => {
                   to="/login"
                   onClick={handleNavLinkClick}
                 >
-                 <i className="fa-solid fa-user border p-2 rounded-user"></i>
+                  Login Now
                 </NavLink>
               )}
             </li>

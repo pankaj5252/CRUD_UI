@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import DashNav from './DashNav';
+import { toast, ToastContainer } from "react-toastify";
+
 
 const AddEmployee = () => {
     const [loading, setLoading] = useState(false);
@@ -34,6 +36,9 @@ const AddEmployee = () => {
         try {
             const response = await axios.post('https://crud-backend-lmk8.onrender.com/addEmployee', formData, config);
             console.log('Employee added:', response.data);
+            toast.success("Employee Added successful!", {
+                position: "top-right",
+              });
             setFormData({
                 fname: '',
                 lname: '',
@@ -130,6 +135,7 @@ const AddEmployee = () => {
                     </div>
                 </div>
             </div>
+      <ToastContainer />
         </>
     );
 };

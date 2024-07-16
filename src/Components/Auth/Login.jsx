@@ -41,6 +41,7 @@ const Login = () => {
         });
         setTimeout(() => {
           navigate("/user/dashboard");
+          window.location.reload(false);
         }, 1000);
       }
     } catch (error) {

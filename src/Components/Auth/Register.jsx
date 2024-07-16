@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Fade } from "react-awesome-reveal";
-import { Link ,useNavigate} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"; // Ensure you import the toastify CSS
 
@@ -92,11 +92,11 @@ const Register = () => {
     <div className="container p-4 mb-5 mt-4">
       <div className="row justify-content-center">
         <div className="col-md-3"></div>
-        <div className="col-md-6 shadow p-3">
-          <h1 className="text-center mb-4 mt-2">Register Now</h1>
+        <div className="col-md-6 shadow p-4">
+          <h1 className="text-center mb-3 mt-2">Register Now</h1>
           <Fade>
             <form onSubmit={handleSubmit}>
-              <div className="mb-4">
+              <div className="mb-3">
                 <label className="form-label" htmlFor="name">
                   Name:
                 </label>
@@ -111,7 +111,7 @@ const Register = () => {
                   <small className="text-danger">{errors.name}</small>
                 )}
               </div>
-              <div className="mb-4">
+              <div className="mb-3">
                 <label className="form-label" htmlFor="email">
                   Email:
                 </label>
@@ -126,7 +126,7 @@ const Register = () => {
                   <small className="text-danger">{errors.email}</small>
                 )}
               </div>
-              <div className="mb-4">
+              <div className="mb-3">
                 <label className="form-label" htmlFor="username">
                   Username:
                 </label>
@@ -141,7 +141,7 @@ const Register = () => {
                   <small className="text-danger">{errors.username}</small>
                 )}
               </div>
-              <div className="mb-4">
+              <div className="mb-3">
                 <label className="form-label" htmlFor="password">
                   Password:
                 </label>
@@ -157,7 +157,7 @@ const Register = () => {
                 )}
               </div>
               <div className="text-center">
-                <button type="submit" className="btn text-white btn-block mb-4">
+                <button type="submit" className="btn text-white btn-block mb-3">
                   {loading ? "Loading..." : "Sign Up"}
                 </button>
               </div>

@@ -43,16 +43,18 @@ const Dashboard = () => {
           <div className="col-md-11 p-4">
             <div className="row">
               <div className="col-md-4 d-flex justify-content-center text-center">
-                <div className="shadow w-100 p-3 mt-3">Active Employee : 50</div>
+                <div className="shadow w-100 p-3 mt-3">Active Employee : 0</div>
               </div>
               <div className="col-md-4 d-flex justify-content-center text-center">
-                <div className="shadow w-100 p-3 mt-3">Not Active Employee : 50</div>
+                <div className="shadow w-100 p-3 mt-3">Not Active Employee : 0</div>
               </div>
               <div className="col-md-4 d-flex justify-content-center text-center">
-                <div className="shadow w-100 p-3 mt-3">Total Employee : {employeeCount}</div>
+                <div className="shadow w-100 p-3 mt-3">Total Employee : <b className="text-danger">{employeeCount}</b></div>
               </div>
               <h2 className="text-center mt-5">
-                Project is inprogress
+                <p className="text-danger">Project Work in progress</p>
+                <p>Completed Functionality - Add Employee , Search , Delete , Total Count of Employee</p>
+                <p>Not Completed Functionality - Edit Employee , active count , not active count </p>
               </h2>
             </div>
           </div>

@@ -13,6 +13,7 @@ import AddEmployee from './Components/User/AddEmployee';
 import ShowEmployee from './Components/User/ShowEmployee';
 import ProtectedRoute from './Components/ProtectedRoute';
 import Profile from './Components/User/Profile';
+// import EditEmployee from './Components/User/EditEmployee';
 
 
 function App() {
@@ -31,7 +32,9 @@ function App() {
             <Route path='/user/AddEmployee' element={<AddEmployee />} />
             <Route path='/user/ShowEmployee' element={<ShowEmployee />} />
             <Route path='/user/profile' element={<Profile />} />
+            {/* <Route path="/EditEmployee/:id" element={<EditEmployee />} /> */}
           </Route>
+          <Route path="*" element={<h1 className='text-center'>Page not found</h1>} />
         </Routes>
         <Footer />
       </Router>
