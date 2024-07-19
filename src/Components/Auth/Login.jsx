@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Fade } from "react-awesome-reveal";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Toggle from "../Toggle";
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -13,6 +14,7 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [showPassword, setShowPassword] = useState(false);
+  const [showToggle , setShowTogggle]=useState(false);
 
   const navigate = useNavigate();
 
@@ -23,6 +25,13 @@ const Login = () => {
       [id]: value,
     }));
   };
+
+  useEffect(()=>{
+    const timeout = setTimeout(() => {
+      setShowTogggle(true);
+    }, 2000);
+    return ()=> clearTimeout(timeout);
+  },[])
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -57,6 +66,7 @@ const Login = () => {
 
   return (
     <div>
+       {showToggle && <Toggle />}
       <div className="container p-4 mb-5 mt-4">
         <div className="row justify-content-center">
           <div className="col-md-4"></div>
